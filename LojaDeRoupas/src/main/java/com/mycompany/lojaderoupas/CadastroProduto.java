@@ -1,14 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.mycompany.lojaderoupas;
 
-/**
- *
- * @author Dell
- */
 public class CadastroProduto extends javax.swing.JFrame {
 
     /**
@@ -16,6 +8,12 @@ public class CadastroProduto extends javax.swing.JFrame {
      */
     public CadastroProduto() {
         initComponents();
+        
+          //Centralizar o JFrame
+        this.setLocationRelativeTo(null);
+        
+        //Maximizar
+        this.setExtendedState(MAXIMIZED_BOTH);
     }
 
     /**
