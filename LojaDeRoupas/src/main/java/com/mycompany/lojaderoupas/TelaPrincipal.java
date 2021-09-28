@@ -44,7 +44,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "LOJA DE ROUPAS", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
 
         menuCadastrarCliente.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        menuCadastrarCliente.setText("Cadastro Cliente");
+        menuCadastrarCliente.setText("Cadastrar Cliente");
         menuCadastrarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuCadastrarClienteActionPerformed(evt);
@@ -60,7 +60,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         menuCadastroProduto.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        menuCadastroProduto.setText("Cadastro Produto");
+        menuCadastroProduto.setText("Cadastrar Produto");
         menuCadastroProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuCadastroProdutoActionPerformed(evt);
