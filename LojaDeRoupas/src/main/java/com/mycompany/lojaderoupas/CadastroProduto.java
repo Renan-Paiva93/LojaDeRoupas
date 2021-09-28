@@ -47,7 +47,7 @@ public class CadastroProduto extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastro Produtos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
 
-        jLabel1.setText("Tipo Produto");
+        jLabel1.setText("Nome:");
 
         jLabel2.setText("Fornecedor");
 
@@ -63,11 +63,11 @@ public class CadastroProduto extends javax.swing.JFrame {
 
         jLabel6.setText("Descrição");
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Editar");
 
-        jButton2.setText("jButton2");
+        jButton2.setText("Cancelar");
 
-        jButton3.setText("jButton3");
+        jButton3.setText("Salvar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
