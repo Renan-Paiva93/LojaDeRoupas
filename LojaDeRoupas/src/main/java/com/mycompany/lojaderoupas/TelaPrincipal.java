@@ -28,7 +28,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menuCadastrarCliente = new javax.swing.JButton();
         menuControleCliente = new javax.swing.JButton();
         menuCadastroProduto = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        menuControleProduto = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
@@ -67,7 +67,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setText("Controle de Produto");
+        menuControleProduto.setText("Controle de Produto");
+        menuControleProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuControleProdutoActionPerformed(evt);
+            }
+        });
 
         jButton6.setText("Relatório Vendas Cliente");
 
@@ -88,13 +93,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addComponent(menuCadastrarCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(53, 53, 53)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton4)
+                    .addComponent(menuControleProduto)
                     .addComponent(menuCadastroProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton8))
                 .addContainerGap(49, Short.MAX_VALUE))
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton4, jButton6, jButton7, jButton8, menuCadastrarCliente, menuCadastroProduto, menuControleCliente});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton6, jButton7, jButton8, menuCadastrarCliente, menuCadastroProduto, menuControleCliente, menuControleProduto});
 
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -106,7 +111,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(menuControleCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4))
+                    .addComponent(menuControleProduto))
                 .addGap(6, 6, 6)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton8)
@@ -117,7 +122,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addContainerGap(57, Short.MAX_VALUE))
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jButton4, jButton6, jButton7, jButton8, menuCadastrarCliente, menuCadastroProduto, menuControleCliente});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jButton6, jButton7, jButton8, menuCadastrarCliente, menuCadastroProduto, menuControleCliente, menuControleProduto});
 
         jMenu1.setText("Arquivo");
 
@@ -183,6 +188,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         telaControle.setVisible(true);
     }//GEN-LAST:event_menuControleClienteActionPerformed
 
+    private void menuControleProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuControleProdutoActionPerformed
+       ControleDeProdutos telaControle = new ControleDeProdutos();
+       telaControle.setVisible(true);
+    }//GEN-LAST:event_menuControleProdutoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -219,7 +229,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
@@ -232,6 +241,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton menuCadastrarCliente;
     private javax.swing.JButton menuCadastroProduto;
     private javax.swing.JButton menuControleCliente;
+    private javax.swing.JButton menuControleProduto;
     private javax.swing.JMenuItem menuSair;
     // End of variables declaration//GEN-END:variables
 }
