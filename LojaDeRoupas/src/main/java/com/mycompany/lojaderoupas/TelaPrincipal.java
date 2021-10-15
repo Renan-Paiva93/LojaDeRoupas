@@ -7,6 +7,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
   
     public TelaPrincipal() {
         initComponents();
+       
         
           //Centralizar o JFrame
         this.setLocationRelativeTo(null);
@@ -119,7 +120,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addComponent(jButton7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton6)))
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jButton6, jButton7, jButton8, menuCadastrarCliente, menuCadastroProduto, menuControleCliente, menuControleProduto});
@@ -127,6 +128,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu1.setText("Arquivo");
 
         menuSair.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
+        menuSair.setIcon(new javax.swing.ImageIcon("C:\\Users\\renan.paiva\\Pictures\\exit door.png")); // NOI18N
         menuSair.setText("Sair");
         menuSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -160,38 +162,35 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void menuSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuSairActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_menuSairActionPerformed
+
+    private void menuControleProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuControleProdutoActionPerformed
+        ControleDeProdutos telaControle = new ControleDeProdutos();
+        telaControle.setVisible(true);
+    }//GEN-LAST:event_menuControleProdutoActionPerformed
 
     private void menuCadastroProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadastroProdutoActionPerformed
         CadastroProduto telaProduto = new CadastroProduto();
         telaProduto.setVisible(true);
     }//GEN-LAST:event_menuCadastroProdutoActionPerformed
 
-    private void menuCadastrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadastrarClienteActionPerformed
-        CadastroCliente telaCliente = new CadastroCliente();
-        telaCliente.setVisible(true);
-    }//GEN-LAST:event_menuCadastrarClienteActionPerformed
-
-    private void menuSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuSairActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_menuSairActionPerformed
-
     private void menuControleClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuControleClienteActionPerformed
         ControleDeClientes telaControle = new ControleDeClientes();
         telaControle.setVisible(true);
     }//GEN-LAST:event_menuControleClienteActionPerformed
 
-    private void menuControleProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuControleProdutoActionPerformed
-       ControleDeProdutos telaControle = new ControleDeProdutos();
-       telaControle.setVisible(true);
-    }//GEN-LAST:event_menuControleProdutoActionPerformed
+    private void menuCadastrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadastrarClienteActionPerformed
+        CadastroCliente telaCliente = new CadastroCliente();
+        telaCliente.setVisible(true);
+    }//GEN-LAST:event_menuCadastrarClienteActionPerformed
 
     /**
      * @param args the command line arguments
