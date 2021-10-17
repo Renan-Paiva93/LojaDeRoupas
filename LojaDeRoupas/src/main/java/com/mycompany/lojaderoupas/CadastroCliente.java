@@ -334,6 +334,8 @@ public class CadastroCliente extends javax.swing.JFrame {
         
         //System.out.println(txtCpf.getText().trim().length());
         
+        
+        
         if(txtNome.getText().trim().equals("")){
                 JOptionPane.showMessageDialog(this, "O campo nome é obrigatorio");
                 return;
@@ -344,12 +346,12 @@ public class CadastroCliente extends javax.swing.JFrame {
                 return;
             }
         
-        String tipoSexo = "";
-        if(jcSexo.getSelectedIndex() > 0){
-            tipoSexo = jcSexo.getSelectedItem().toString();
-            JOptionPane.showMessageDialog(this, tipoSexo);
-        }else{
-            JOptionPane.showConfirmDialog(this, "Selecione o Sexo");
+        //String tipoSexo = "";
+        if(jcSexo.getSelectedIndex() == 0){
+          //  tipoSexo = jcSexo.getSelectedItem().toString();
+            JOptionPane.showMessageDialog(this, "Selecione o campo Sexo!");
+        //}else{
+        //    JOptionPane.showConfirmDialog(this, "Selecione o Sexo");
         }
         
          if(txtDataNasc.getText().trim().length()< 8){
@@ -363,7 +365,6 @@ public class CadastroCliente extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "O campo CPF está vazio");
             return;
         }
-        
         
         if(txtCel.getText().trim().length() < 12){
             //System.out.println("CPF Vazio");
@@ -381,6 +382,13 @@ public class CadastroCliente extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "O campo Endereço é obrigatorio");
                 return;
             }
+        
+        
+        if(txtNome != null && txtCpf != null && txtCel != null && txtEmail != null && txtDataNasc != null && txtEndereco != null && txtEstadoCivil != null){
+            JOptionPane.showMessageDialog(this, "Selecione o campo Sexo!");
+        }else{
+           JOptionPane.showConfirmDialog(this, "Deseja salvar");
+        }
         
     }//GEN-LAST:event_btnSalvarClienteActionPerformed
 
