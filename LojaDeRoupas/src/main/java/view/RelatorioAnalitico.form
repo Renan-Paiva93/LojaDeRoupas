@@ -156,12 +156,12 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">
           <Properties>
-            <Property name="text" type="java.lang.String" value="01"/>
+            <Property name="text" type="java.lang.String" value="35"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel9">
           <Properties>
-            <Property name="text" type="java.lang.String" value="90,00"/>
+            <Property name="text" type="java.lang.String" value="5.000,00"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel10">

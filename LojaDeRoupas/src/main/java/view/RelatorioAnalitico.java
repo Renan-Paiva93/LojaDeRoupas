@@ -61,9 +61,9 @@ public class RelatorioAnalitico extends javax.swing.JFrame {
 
         jLabel7.setText("Jady Cardoso");
 
-        jLabel8.setText("01");
+        jLabel8.setText("35");
 
-        jLabel9.setText("90,00");
+        jLabel9.setText("5.000,00");
 
         jLabel10.setText("18/10/2021");
 
