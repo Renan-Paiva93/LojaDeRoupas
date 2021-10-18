@@ -16,6 +16,8 @@ public class RelatorioSintetico extends javax.swing.JFrame {
      */
     public RelatorioSintetico() {
         initComponents();
+        
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -59,7 +61,7 @@ public class RelatorioSintetico extends javax.swing.JFrame {
 
         jTextField7.setText("jTextField7");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Relatorio Sintetico", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
 

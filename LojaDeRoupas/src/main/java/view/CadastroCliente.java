@@ -20,10 +20,12 @@ public class CadastroCliente extends javax.swing.JFrame {
      */
     public CadastroCliente() {
         initComponents();
+        
+        this.setLocationRelativeTo(null);
     }
     
     
-
+    
     @Override
     public void setLocationRelativeTo(Component cmpnt) {
         super.setLocationRelativeTo(cmpnt); //To change body of generated methods, choose Tools | Templates.
@@ -66,7 +68,7 @@ public class CadastroCliente extends javax.swing.JFrame {
         txtEstadoCivil = new javax.swing.JTextField();
         jcSexo = new javax.swing.JComboBox<>();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastro de Clientes", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18))); // NOI18N
         jPanel1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
@@ -288,7 +290,8 @@ public class CadastroCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_txtEnderecoActionPerformed
 
     private void menuSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuSairActionPerformed
-        System.exit(0);
+        //System.exit(0);
+        
     }//GEN-LAST:event_menuSairActionPerformed
 
     private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
