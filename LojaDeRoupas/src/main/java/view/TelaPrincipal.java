@@ -142,7 +142,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenu2.setText("Consultas");
 
-        txtRelCliente.setText("Relatório clientes");
+        txtRelCliente.setText("Relatório Analítico");
         txtRelCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtRelClienteActionPerformed(evt);
@@ -150,7 +150,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         jMenu2.add(txtRelCliente);
 
-        txtRelVendas.setText("Relatório vendas");
+        txtRelVendas.setText("Relatório Sintético");
+        txtRelVendas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtRelVendasActionPerformed(evt);
+            }
+        });
         jMenu2.add(txtRelVendas);
 
         jMenuBar1.add(jMenu2);
@@ -214,9 +219,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void txtRelClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRelClienteActionPerformed
         // TODO add your handling code here:
-        CadastroCliente telaCliente = new CadastroCliente();
-        telaCliente.setVisible(true);
+        RelatorioAnalitico telaRelatorio = new RelatorioAnalitico();
+        telaRelatorio.setVisible(true);
     }//GEN-LAST:event_txtRelClienteActionPerformed
+
+    private void txtRelVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRelVendasActionPerformed
+        // TODO add your handling code here:
+        RelatorioSintetico telaRelatorio = new RelatorioSintetico();
+        telaRelatorio.setVisible(true);
+    }//GEN-LAST:event_txtRelVendasActionPerformed
 
     /**
      * @param args the command line arguments

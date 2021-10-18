@@ -29,7 +29,7 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="txtRelCliente">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Relat&#xf3;rio clientes"/>
+                <Property name="text" type="java.lang.String" value="Relat&#xf3;rio Anal&#xed;tico"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtRelClienteActionPerformed"/>
@@ -37,8 +37,11 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="txtRelVendas">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Relat&#xf3;rio vendas"/>
+                <Property name="text" type="java.lang.String" value="Relat&#xf3;rio Sint&#xe9;tico"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtRelVendasActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
