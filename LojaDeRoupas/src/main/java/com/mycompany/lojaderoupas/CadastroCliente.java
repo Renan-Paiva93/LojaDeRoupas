@@ -59,9 +59,6 @@ public class CadastroCliente extends javax.swing.JFrame {
         txtCel = new javax.swing.JFormattedTextField();
         menuSair = new javax.swing.JButton();
         btnSalvarCliente = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jTextField1Tel = new javax.swing.JTextField();
@@ -132,7 +129,7 @@ public class CadastroCliente extends javax.swing.JFrame {
             }
         });
 
-        menuSair.setText("Sair");
+        menuSair.setText("Cancelar");
         menuSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuSairActionPerformed(evt);
@@ -145,12 +142,6 @@ public class CadastroCliente extends javax.swing.JFrame {
                 btnSalvarClienteActionPerformed(evt);
             }
         });
-
-        jButton3.setText("Alterar");
-
-        jButton4.setText("Excluir");
-
-        jButton5.setText("Incluir");
 
         jLabel8.setText("Sexo: *");
 
@@ -201,22 +192,16 @@ public class CadastroCliente extends javax.swing.JFrame {
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jTextField1Tel, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(jButton5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton4)
-                        .addGap(18, 18, 18)
+                        .addGap(203, 203, 203)
                         .addComponent(btnSalvarCliente)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(menuSair)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtCpf, txtDataNasc, txtEstadoCivil});
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnSalvarCliente, jButton3, menuSair});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnSalvarCliente, menuSair});
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jTextField1Tel, txtCel});
 
@@ -261,26 +246,23 @@ public class CadastroCliente extends javax.swing.JFrame {
                 .addComponent(txtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(menuSair, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3)
                     .addComponent(btnSalvarCliente))
                 .addContainerGap())
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jTextField1Tel, txtCel, txtCpf, txtDataNasc, txtEmail, txtEndereco, txtEstadoCivil, txtNome});
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnSalvarCliente, jButton3, jButton4, jButton5, menuSair});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnSalvarCliente, menuSair});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(93, Short.MAX_VALUE)
+                .addContainerGap(94, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -346,12 +328,10 @@ public class CadastroCliente extends javax.swing.JFrame {
                 return;
             }
         
-        //String tipoSexo = "";
+
         if(jcSexo.getSelectedIndex() == 0){
-          //  tipoSexo = jcSexo.getSelectedItem().toString();
             JOptionPane.showMessageDialog(this, "Selecione o campo Sexo!");
-        //}else{
-        //    JOptionPane.showConfirmDialog(this, "Selecione o Sexo");
+            return;
         }
         
          if(txtDataNasc.getText().trim().length()< 8){
@@ -384,10 +364,8 @@ public class CadastroCliente extends javax.swing.JFrame {
             }
         
         
-        if(txtNome != null && txtCpf != null && txtCel != null && txtEmail != null && txtDataNasc != null && txtEndereco != null && txtEstadoCivil != null){
-            JOptionPane.showMessageDialog(this, "Selecione o campo Sexo!");
-        }else{
-           JOptionPane.showConfirmDialog(this, "Deseja salvar");
+        if(txtNome != null && txtCpf != null && txtCel != null && txtEmail != null && txtDataNasc != null && txtEndereco != null && txtEstadoCivil != null && jcSexo.getSelectedIndex() != 0){
+            JOptionPane.showConfirmDialog(this, "Deseja salvar?", "Cadastro", WIDTH);
         }
         
     }//GEN-LAST:event_btnSalvarClienteActionPerformed
@@ -435,9 +413,6 @@ public class CadastroCliente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSalvarCliente;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
