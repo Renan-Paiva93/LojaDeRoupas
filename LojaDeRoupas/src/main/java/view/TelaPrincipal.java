@@ -130,7 +130,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu1.setText("Arquivo");
 
         menuSair.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
-        menuSair.setText("Sair");
+        menuSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Log-Out-icon.png"))); // NOI18N
+        menuSair.setText("Sair do Sistema");
         menuSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuSairActionPerformed(evt);
