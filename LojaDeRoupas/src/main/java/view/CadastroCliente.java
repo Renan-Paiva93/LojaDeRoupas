@@ -83,7 +83,7 @@ public class CadastroCliente extends javax.swing.JFrame {
 
         jLabel2.setText("CPF:*");
 
-        jLabel3.setText("Data Nascimento: *");
+        jLabel3.setText("Data de nascimento: *");
 
         jLabel4.setText("Celular: *");
 
@@ -147,7 +147,7 @@ public class CadastroCliente extends javax.swing.JFrame {
 
         jLabel8.setText("Sexo: *");
 
-        jLabel7.setText("Telefone:");
+        jLabel7.setText("Telefone fixo :");
 
         jTextField1Tel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
