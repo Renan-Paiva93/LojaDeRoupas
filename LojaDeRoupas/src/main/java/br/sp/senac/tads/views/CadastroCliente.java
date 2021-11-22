@@ -5,6 +5,8 @@
  */
 package br.sp.senac.tads.views;
 
+import br.sp.senac.tads.DAO.ClienteDAO;
+import br.sp.senac.tads.model.Cliente;
 import java.awt.Component;
 import java.util.Locale;
 import javax.swing.JOptionPane;
@@ -138,7 +140,7 @@ public class CadastroCliente extends javax.swing.JFrame {
             }
         });
 
-        btnSalvarCliente.setText("Salvar");
+        btnSalvarCliente.setText("Cadastrar");
         btnSalvarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalvarClienteActionPerformed(evt);
@@ -319,6 +321,12 @@ public class CadastroCliente extends javax.swing.JFrame {
         
         //System.out.println(txtCpf.getText().trim().length());
         
+        Cliente c = new Cliente();
+        ClienteDAO dao = new ClienteDAO();
+        c.setNome(txtNome.getText());
+        c.setEmail(txtEmail.getText());
+        
+        dao.create(c);
         
         
         if(txtNome.getText().trim().equals("")){

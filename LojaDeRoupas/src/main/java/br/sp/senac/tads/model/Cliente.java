@@ -13,7 +13,9 @@ public class Cliente {
             cpf,
             genero,
             nascimento,
-            Fone1,
+            celular,
+            fixo,
+            estadoCivil,
             endereco;
 
     public Cliente() {
@@ -29,6 +31,20 @@ public class Cliente {
     public static void setClientesCadastrados(int clientesCadastrados) {
         Cliente.clientesCadastrados = clientesCadastrados;
     }
+
+    public String getCelular() {
+        return celular;
+    }
+
+    public String getFixo() {
+        return fixo;
+    }
+
+    public String getEstadoCivil() {
+        return estadoCivil;
+    }
+    
+    
 
     public String getNome() {
         return nome;
@@ -70,13 +86,6 @@ public class Cliente {
         this.nascimento = nascimento;
     }
 
-    public String getFone1() {
-        return Fone1;
-    }
-
-    public void setFone1(String Fone1) {
-        this.Fone1 = Fone1;
-    }
 
     public String getEndereco() {
         return endereco;
