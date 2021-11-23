@@ -1,6 +1,17 @@
 
 package br.sp.senac.tads.views;
 
+import br.sp.senac.tads.DAO.ClienteDAO;
+import br.sp.senac.tads.model.Cliente;
+import java.awt.HeadlessException;
+import javax.swing.JButton;
+import javax.swing.JFormattedTextField;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
 public class ControleDeClientes extends javax.swing.JFrame {
 
     /**
@@ -9,12 +20,46 @@ public class ControleDeClientes extends javax.swing.JFrame {
     public ControleDeClientes() {
         initComponents();
         
+        
           //Centralizar o JFrame
         this.setLocationRelativeTo(null);
         
         //Maximizar
         //this.setExtendedState(MAXIMIZED_BOTH);
     }
+
+    public ControleDeClientes(JButton btnInserir, JButton jButton2, JButton jButton3, JButton jButton4, JButton jButton5, JFormattedTextField jFormattedTextField1, JLabel jLabel1, JLabel jLabel2, JLabel jLabel3, JLabel jLabel4, JPanel jPanel1, JPanel jPanel2, JScrollPane jScrollPane1, JTable jTable1, JTextField jTextField1) throws HeadlessException {
+        this.btnInserir = btnInserir;
+        this.jButton2 = jButton2;
+        this.jButton3 = jButton3;
+        this.jButton4 = jButton4;
+        this.jButton5 = jButton5;
+        this.jFormattedTextField1 = jFormattedTextField1;
+        this.jLabel1 = jLabel1;
+        this.jLabel2 = jLabel2;
+        this.jLabel3 = jLabel3;
+        this.jLabel4 = jLabel4;
+        this.jPanel1 = jPanel1;
+        this.jPanel2 = jPanel2;
+        this.jScrollPane1 = jScrollPane1;
+        this.jTable1 = jTable1;
+        this.jTextField1 = jTextField1;
+    }
+    
+    
+    
+    public void readJTable(){
+        
+       ClienteDAO cdao =  new ClienteDAO();
+       
+        for (Cliente c : cdao.read()) {
+            
+            
+            
+        }
+        
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

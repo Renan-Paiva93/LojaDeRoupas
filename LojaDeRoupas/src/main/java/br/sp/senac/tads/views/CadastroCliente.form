@@ -28,9 +28,9 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="36" max="32767" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="36" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -79,8 +79,8 @@
                                   <Component id="txtEmail" alignment="0" max="32767" attributes="0"/>
                                   <Component id="txtEndereco" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" attributes="0">
-                                      <Component id="jcSexo" min="-2" pref="170" max="-2" attributes="0"/>
-                                      <EmptySpace pref="62" max="32767" attributes="0"/>
+                                      <Component id="txtGenero" max="32767" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                           <Component id="jLabel3" alignment="0" min="-2" pref="145" max="-2" attributes="0"/>
                                           <Group type="103" alignment="1" groupAlignment="0" attributes="0">
@@ -94,13 +94,13 @@
                                   <Group type="102" attributes="0">
                                       <Component id="txtCel" linkSize="9" min="-2" pref="145" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="jTextField1Tel" linkSize="9" min="-2" pref="109" max="-2" attributes="0"/>
+                                      <Component id="txtFixo" linkSize="9" min="-2" pref="109" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="203" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="118" max="-2" attributes="0"/>
                           <Component id="btnSalvarCliente" linkSize="7" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="menuSair" linkSize="7" min="-2" max="-2" attributes="0"/>
@@ -129,7 +129,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="txtDataNasc" linkSize="8" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jcSexo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtGenero" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -149,7 +149,7 @@
                   <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="txtCel" linkSize="8" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField1Tel" linkSize="8" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtFixo" linkSize="8" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
@@ -264,9 +264,9 @@
             <Property name="text" type="java.lang.String" value="Telefone fixo :"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1Tel">
+        <Component class="javax.swing.JTextField" name="txtFixo">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1TelActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFixoActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel9">
@@ -276,19 +276,10 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtEstadoCivil">
         </Component>
-        <Component class="javax.swing.JComboBox" name="jcSexo">
-          <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="3">
-                <StringItem index="0" value="Selecione:"/>
-                <StringItem index="1" value="Masculino"/>
-                <StringItem index="2" value="Feminino"/>
-              </StringArray>
-            </Property>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-          </AuxValues>
+        <Component class="javax.swing.JTextField" name="txtGenero">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtGeneroActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

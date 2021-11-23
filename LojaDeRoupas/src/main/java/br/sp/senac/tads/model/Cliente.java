@@ -32,19 +32,13 @@ public class Cliente {
         Cliente.clientesCadastrados = clientesCadastrados;
     }
 
-    public String getCelular() {
-        return celular;
+    public int getId() {
+        return id;
     }
 
-    public String getFixo() {
-        return fixo;
+    public void setId(int id) {
+        this.id = id;
     }
-
-    public String getEstadoCivil() {
-        return estadoCivil;
-    }
-    
-    
 
     public String getNome() {
         return nome;
@@ -86,6 +80,29 @@ public class Cliente {
         this.nascimento = nascimento;
     }
 
+    public String getCelular() {
+        return celular;
+    }
+
+    public void setCelular(String celular) {
+        this.celular = celular;
+    }
+
+    public String getFixo() {
+        return fixo;
+    }
+
+    public void setFixo(String fixo) {
+        this.fixo = fixo;
+    }
+
+    public String getEstadoCivil() {
+        return estadoCivil;
+    }
+
+    public void setEstadoCivil(String estadoCivil) {
+        this.estadoCivil = estadoCivil;
+    }
 
     public String getEndereco() {
         return endereco;
@@ -93,14 +110,6 @@ public class Cliente {
 
     public void setEndereco(String endereco) {
         this.endereco = endereco;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
 }
