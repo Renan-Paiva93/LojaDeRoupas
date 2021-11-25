@@ -12,12 +12,12 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
-public class ControleDeClientes extends javax.swing.JFrame {
+public class ManterClientes extends javax.swing.JFrame {
 
     /**
      * Creates new form CadastroProduto
      */
-    public ControleDeClientes() {
+    public ManterClientes() {
         initComponents();
         
         
@@ -28,7 +28,7 @@ public class ControleDeClientes extends javax.swing.JFrame {
         //this.setExtendedState(MAXIMIZED_BOTH);
     }
 
-    public ControleDeClientes(JButton btnInserir, JButton jButton2, JButton jButton3, JButton jButton4, JButton jButton5, JFormattedTextField jFormattedTextField1, JLabel jLabel1, JLabel jLabel2, JLabel jLabel3, JLabel jLabel4, JPanel jPanel1, JPanel jPanel2, JScrollPane jScrollPane1, JTable jTable1, JTextField jTextField1) throws HeadlessException {
+    public ManterClientes(JButton btnInserir, JButton jButton2, JButton jButton3, JButton jButton4, JButton jButton5, JFormattedTextField jFormattedTextField1, JLabel jLabel1, JLabel jLabel2, JLabel jLabel3, JLabel jLabel4, JPanel jPanel1, JPanel jPanel2, JScrollPane jScrollPane1, JTable jTable1, JTextField jTextField1) throws HeadlessException {
         this.btnInserir = btnInserir;
         this.jButton2 = jButton2;
         this.jButton3 = jButton3;
@@ -261,21 +261,23 @@ public class ControleDeClientes extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ControleDeClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ManterClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ControleDeClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ManterClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ControleDeClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ManterClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ControleDeClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ManterClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ControleDeClientes().setVisible(true);
+                new ManterClientes().setVisible(true);
             }
         });
     }

@@ -14,7 +14,7 @@ public class Produto {
     public static int produtosCadastrados;
     private int id, quantidade;
     private double valor;
-    private String nome,fornecedor,descricao;
+    private String nome,fornecedor, marca, descricao;
 
     public Produto() {
         produtosCadastrados++;
@@ -76,5 +76,15 @@ public class Produto {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+    
+    
 
 }
