@@ -192,7 +192,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_menuSairActionPerformed
 
     private void menuControleProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuControleProdutoActionPerformed
-        ManterProdutos telaControle = new ManterProdutos();
+        ProdutoManterView telaControle = new ProdutoManterView();
         telaControle.setVisible(true);
     }//GEN-LAST:event_menuControleProdutoActionPerformed
 
@@ -202,7 +202,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_menuCadastroProdutoActionPerformed
 
     private void menuControleClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuControleClienteActionPerformed
-        ManterClientes telaControle = new ManterClientes();
+        ClienteManterView telaControle = new ClienteManterView();
         telaControle.setVisible(true);
     }//GEN-LAST:event_menuControleClienteActionPerformed
 

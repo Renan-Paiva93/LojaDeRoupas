@@ -1,6 +1,8 @@
 
 package br.sp.senac.tads.views;
 
+import br.sp.senac.tads.DAO.ProdutoDAO;
+import br.sp.senac.tads.model.Produto;
 import javax.swing.JOptionPane;
 import br.sp.senac.tads.util.Validador;
 
@@ -57,6 +59,12 @@ public class CadastroProduto extends javax.swing.JFrame {
 
         jLabel1.setText("Nome: *");
 
+        txtNomeProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomeProdutoActionPerformed(evt);
+            }
+        });
+
         jLabel2.setText("Fornecedor: *");
 
         txtFornecedor.addActionListener(new java.awt.event.ActionListener() {
@@ -107,11 +115,8 @@ public class CadastroProduto extends javax.swing.JFrame {
                         .addComponent(jButton1)
                         .addGap(59, 59, 59)
                         .addComponent(txtSalvar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                         .addComponent(jButton2))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(txtNomeProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
@@ -119,11 +124,10 @@ public class CadastroProduto extends javax.swing.JFrame {
                             .addComponent(txtFornecedor)
                             .addComponent(jLabel7)
                             .addComponent(jLabel6))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(txtNomeProduto))
                 .addContainerGap())
         );
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtFornecedor, txtNomeProduto});
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtQtd, txtValor});
 
@@ -172,8 +176,8 @@ public class CadastroProduto extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -192,6 +196,18 @@ public class CadastroProduto extends javax.swing.JFrame {
 
     private void txtSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSalvarActionPerformed
         // TODO add your handling code here:
+        
+        Produto p = new Produto();
+        ProdutoDAO dao = new ProdutoDAO();
+        p.setNome(txtNomeProduto.getText());
+        p.setMarca(txtMarca.getText());
+        p.setFornecedor(txtFornecedor.getText());
+        p.setQuantidade(Integer.parseInt(txtQtd.getText()));
+        p.setValor(Double.parseDouble(txtValor.getText()));
+        p.setDescricao(txtDesc.getText());
+        
+        dao.create(p);
+       
         
         if(txtNomeProduto.getText().trim().equals("")){
                 JOptionPane.showMessageDialog(this, "Digite o nome do Produto. ");
@@ -239,6 +255,10 @@ public class CadastroProduto extends javax.swing.JFrame {
         }
          
     }//GEN-LAST:event_txtSalvarActionPerformed
+
+    private void txtNomeProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeProdutoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeProdutoActionPerformed
 
     /**
      * @param args the command line arguments

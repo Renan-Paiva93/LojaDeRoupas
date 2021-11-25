@@ -7,6 +7,7 @@ package br.sp.senac.tads.controller;
 
 import br.sp.senac.tads.DAO.ProdutoDAO;
 import br.sp.senac.tads.model.Produto;
+import java.util.ArrayList;
 
 /**
  *
@@ -25,10 +26,34 @@ public class ProdutoController {
         prod.setValor(pValor);
         prod.setDescricao(pDescricao);
         
-        return ProdutoDAO.salvar(prod);
-       
-
-       
+        return ProdutoDAO.create(prod);
     }
+    
+    public static boolean excluir(int ID){   
+        return ProdutoDAO.excluir(ID);     
+    }
+    
+    public static ArrayList<String[]> consultar(){
+
+
+    ArrayList<Produto> listaRetorno = ProdutoDAO.consultar();
+    ArrayList<String[]> retornoView = new ArrayList<>();
+
+     
+    for (Produto produto : listaRetorno) {
+
+            retornoView.add(new String[] {
+                
+                String.valueOf(produto.getId()),
+                String.valueOf(produto.getNome()),
+                String.valueOf(produto.getMarca()),
+
+              }
+          );
+    } 
+    return retornoView;     
+  }
+    
+    
     
 }

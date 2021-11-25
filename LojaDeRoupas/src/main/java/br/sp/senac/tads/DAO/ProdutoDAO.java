@@ -21,12 +21,12 @@ import java.util.logging.Logger;
  */
 public class ProdutoDAO {
 
-    public static String url = "jdbc:mysql://localhost:3307/lojaderoupas?useTimezone=true&serverTimezone=UTC&useSSL=false";
+    public static String url = "jdbc:mysql://localhost:3307/lojaderoupas";
     public static String login = "root";
-    public static String senha = "admin";
+    public static String senha = "";
     public static String DRIVER = "com.mysql.cj.jdbc.Driver";
 
-    public static boolean salvar(Produto obj) {
+    public static boolean create(Produto obj) {
 
         boolean retorno = false;
         Connection conexao = null;
@@ -40,9 +40,10 @@ public class ProdutoDAO {
             //2º passo - abrir conexao
             conexao = DriverManager.getConnection(url, login, senha);
 
-            instrucaoSQL = conexao.prepareStatement("INSERT INTO produto (nome, marca) VALUES (?,?)");
+            instrucaoSQL = conexao.prepareStatement("INSERT INTO produto (nome, marca, fornecedor) VALUES (?, ?, ?)");
             instrucaoSQL.setString(1, obj.getNome());
             instrucaoSQL.setString(2, obj.getMarca());
+            instrucaoSQL.setString(3, obj.getFornecedor());
 
             int linhasAfetadas = instrucaoSQL.executeUpdate();
             if (linhasAfetadas > 0) {
@@ -80,7 +81,7 @@ public class ProdutoDAO {
             conexao = DriverManager.getConnection(url, login, senha);
 
             //ETAPA 3 - Executar um comando SQL
-            instrucaoSQL = conexao.prepareStatement("SELECT * FROM Produto");
+            instrucaoSQL = conexao.prepareStatement("SELECT * FROM produto");
 
             rs = instrucaoSQL.executeQuery();
 
