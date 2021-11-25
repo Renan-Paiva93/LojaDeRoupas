@@ -26,7 +26,7 @@ public class ProdutoController {
         prod.setValor(pValor);
         prod.setDescricao(pDescricao);
         
-        return ProdutoDAO.create(prod);
+        return ProdutoDAO.salvar(prod);
     }
     
     public static boolean excluir(int ID){   

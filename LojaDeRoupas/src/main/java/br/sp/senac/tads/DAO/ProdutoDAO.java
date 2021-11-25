@@ -21,12 +21,12 @@ import java.util.logging.Logger;
  */
 public class ProdutoDAO {
 
-    public static String url = "jdbc:mysql://localhost:3307/lojaderoupas";
+    public static String url = "jdbc:mysql://localhost:3306/lojaderoupas";
     public static String login = "root";
-    public static String senha = "";
+    public static String senha = "admin";
     public static String DRIVER = "com.mysql.cj.jdbc.Driver";
 
-    public static boolean create(Produto obj) {
+    public static boolean salvar(Produto obj) {
 
         boolean retorno = false;
         Connection conexao = null;
@@ -44,6 +44,9 @@ public class ProdutoDAO {
             instrucaoSQL.setString(1, obj.getNome());
             instrucaoSQL.setString(2, obj.getMarca());
             instrucaoSQL.setString(3, obj.getFornecedor());
+            //instrucaoSQL.setInt(4, obj.getQuantidade());
+            //instrucaoSQL.setDouble(5, obj.getValor());
+            //instrucaoSQL.setString(6, obj.getDescricao());
 
             int linhasAfetadas = instrucaoSQL.executeUpdate();
             if (linhasAfetadas > 0) {
@@ -91,6 +94,7 @@ public class ProdutoDAO {
                 obj.setId(rs.getInt("idProduto"));
                 obj.setNome(rs.getNString("nome"));
                 obj.setMarca(rs.getNString("marca"));
+                //obj.setQuantidade(rs.getInt("qtd"));
 
                 listaRetorno.add(obj);
 

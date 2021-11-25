@@ -2,16 +2,18 @@
 package br.sp.senac.tads.views;
 
 import br.sp.senac.tads.DAO.ProdutoDAO;
+import br.sp.senac.tads.controller.ProdutoController;
 import br.sp.senac.tads.model.Produto;
 import javax.swing.JOptionPane;
 import br.sp.senac.tads.util.Validador;
+import javax.swing.JTextField;
 
-public class CadastroProduto extends javax.swing.JFrame {
+public class CadastroProdutoView extends javax.swing.JFrame {
 
     /**
      * Creates new form CadastroProduto
      */
-    public CadastroProduto() {
+    public CadastroProdutoView() {
         initComponents();
         
           //Centralizar o JFrame
@@ -117,14 +119,11 @@ public class CadastroProduto extends javax.swing.JFrame {
                         .addComponent(txtSalvar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                         .addComponent(jButton2))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(txtFornecedor)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel6))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2)
+                    .addComponent(txtFornecedor)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel6)
                     .addComponent(txtNomeProduto))
                 .addContainerGap())
         );
@@ -197,18 +196,33 @@ public class CadastroProduto extends javax.swing.JFrame {
     private void txtSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSalvarActionPerformed
         // TODO add your handling code here:
         
-        Produto p = new Produto();
-        ProdutoDAO dao = new ProdutoDAO();
-        p.setNome(txtNomeProduto.getText());
-        p.setMarca(txtMarca.getText());
-        p.setFornecedor(txtFornecedor.getText());
-        p.setQuantidade(Integer.parseInt(txtQtd.getText()));
-        p.setValor(Double.parseDouble(txtValor.getText()));
-        p.setDescricao(txtDesc.getText());
+         String nome = txtNomeProduto.getText();
+         String marca = txtMarca.getText();
+         String fornecedor = txtFornecedor.getText();
+         int Qtd = Integer.parseInt(txtQtd.getText());
+         double valor = Double.parseDouble(txtValor.getText());
+         String desc = txtDesc.getText();
+         
+         boolean retorno = ProdutoController.salvar(nome, marca, fornecedor, Qtd, valor, desc);
+         
+          if(retorno == true) {
+             JOptionPane.showMessageDialog(this, "Produto gravada com sucesso!");
+         } else {
+             JOptionPane.showConfirmDialog(this, "Falha na gravação!");
+         }
+         
         
-        dao.create(p);
+        //Produto p = new Produto();
+        //ProdutoDAO dao = new ProdutoDAO();
+        //p.setNome(txtNomeProduto.getText());
+        //p.setMarca(txtMarca.getText());
+        //p.setFornecedor(txtFornecedor.getText());
+        //p.setQuantidade(Integer.parseInt(txtQtd.getText()));
+        //p.setValor(Double.parseDouble(txtValor.getText()));
+        //p.setDescricao(txtDesc.getText());
+        
+        //dao.create(p);
        
-        
         if(txtNomeProduto.getText().trim().equals("")){
                 JOptionPane.showMessageDialog(this, "Digite o nome do Produto. ");
                 return;
@@ -277,20 +291,21 @@ public class CadastroProduto extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastroProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroProdutoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastroProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroProdutoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastroProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroProdutoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastroProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroProdutoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CadastroProduto().setVisible(true);
+                new CadastroProdutoView().setVisible(true);
             }
         });
     }

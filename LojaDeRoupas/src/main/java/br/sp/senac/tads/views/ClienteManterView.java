@@ -240,7 +240,7 @@ public class ClienteManterView extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void btnInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserirActionPerformed
-        CadastroCliente telaCliente = new CadastroCliente();
+        CadastroClienteView telaCliente = new CadastroClienteView();
         telaCliente.setVisible(true);
     }//GEN-LAST:event_btnInserirActionPerformed
 

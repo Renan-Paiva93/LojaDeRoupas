@@ -197,7 +197,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_menuControleProdutoActionPerformed
 
     private void menuCadastroProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadastroProdutoActionPerformed
-        CadastroProduto telaProduto = new CadastroProduto();
+        CadastroProdutoView telaProduto = new CadastroProdutoView();
         telaProduto.setVisible(true);
     }//GEN-LAST:event_menuCadastroProdutoActionPerformed
 
@@ -207,7 +207,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_menuControleClienteActionPerformed
 
     private void menuCadastrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadastrarClienteActionPerformed
-        CadastroCliente telaCliente = new CadastroCliente();
+        CadastroClienteView telaCliente = new CadastroClienteView();
         telaCliente.setVisible(true);
     }//GEN-LAST:event_menuCadastrarClienteActionPerformed
 
