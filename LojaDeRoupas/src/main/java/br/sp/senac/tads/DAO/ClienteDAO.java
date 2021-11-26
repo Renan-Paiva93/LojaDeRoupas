@@ -23,6 +23,18 @@ import javax.swing.JOptionPane;
  * @author Dell
  */
 public class ClienteDAO {
+
+    public static ArrayList<Cliente> consultar() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static boolean excluir(int ID) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static boolean salvar(Cliente c) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     //criar metodo salvar
     public void create(Cliente c){
