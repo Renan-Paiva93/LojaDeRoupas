@@ -195,23 +195,22 @@ public class CadastroProdutoView extends javax.swing.JFrame {
 
     private void txtSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSalvarActionPerformed
         // TODO add your handling code here:
-        
-         String nome = txtNomeProduto.getText();
-         String marca = txtMarca.getText();
-         String fornecedor = txtFornecedor.getText();
-         int Qtd = Integer.parseInt(txtQtd.getText());
-         double valor = Double.parseDouble(txtValor.getText());
-         String desc = txtDesc.getText();
-         
-         boolean retorno = ProdutoController.salvar(nome, marca, fornecedor, Qtd, valor, desc);
-         
-          if(retorno == true) {
-             JOptionPane.showMessageDialog(this, "Produto gravada com sucesso!");
-         } else {
-             JOptionPane.showConfirmDialog(this, "Falha na gravação!");
-         }
-         
-        
+
+        String nome = txtNomeProduto.getText();
+        String marca = txtMarca.getText();
+        String fornecedor = txtFornecedor.getText();
+        int Qtd = Integer.parseInt(txtQtd.getText());
+        double valor = Double.parseDouble(txtValor.getText());
+        String desc = txtDesc.getText();
+
+        boolean retorno = ProdutoController.salvar(nome, marca, fornecedor, Qtd, valor, desc);
+
+        if (retorno == true) {
+            JOptionPane.showMessageDialog(this, "Produto gravado com sucesso!");
+        } else {
+            JOptionPane.showConfirmDialog(this, "Falha na gravação!");
+        }
+
         //Produto p = new Produto();
         //ProdutoDAO dao = new ProdutoDAO();
         //p.setNome(txtNomeProduto.getText());
@@ -220,54 +219,52 @@ public class CadastroProdutoView extends javax.swing.JFrame {
         //p.setQuantidade(Integer.parseInt(txtQtd.getText()));
         //p.setValor(Double.parseDouble(txtValor.getText()));
         //p.setDescricao(txtDesc.getText());
-        
         //dao.create(p);
-       
-        if(txtNomeProduto.getText().trim().equals("")){
+        if (txtNomeProduto != null && txtMarca != null && txtFornecedor != null && txtQtd != null && txtValor != null) {
+            JOptionPane.showConfirmDialog(this, "Deseja salvar?", "Cadastro", WIDTH);
+
+            if (txtNomeProduto.getText().trim().equals("")) {
                 JOptionPane.showMessageDialog(this, "Digite o nome do Produto. ");
                 return;
             }
-        
-        if(txtMarca.getText().trim().equals("")){
+
+            if (txtMarca.getText().trim().equals("")) {
                 JOptionPane.showMessageDialog(this, "Digite a Marca Produto! ");
                 return;
             }
-        
-        
-        if(txtFornecedor.getText().trim().equals("")){
+
+            if (txtFornecedor.getText().trim().equals("")) {
                 JOptionPane.showMessageDialog(this, "Informe o nome do Fornecedor! ");
                 return;
             }
-        
-        if(txtQtd.getText().trim().equals("")){
+
+            if (txtQtd.getText().trim().equals("")) {
                 JOptionPane.showMessageDialog(this, "Informe a Quantidade! ");
                 return;
             }
-        
-        if(txtFornecedor.getText().trim().equals("")){
+
+            if (txtFornecedor.getText().trim().equals("")) {
                 JOptionPane.showMessageDialog(this, "Informe a Quantidade! ");
                 return;
             }
-        
-        if(txtValor.getText().trim().equals("")){
+
+            if (txtValor.getText().trim().equals("")) {
                 JOptionPane.showMessageDialog(this, "Informe o Valor do Produto. ");
                 return;
             }
-        
-        if (!Validador.validarInt(txtQtd.getText())) {
-            JOptionPane.showMessageDialog(this, "Quantidade Inválida!");
-            return;
+
+            if (!Validador.validarInt(txtQtd.getText())) {
+                JOptionPane.showMessageDialog(this, "Quantidade Inválida!");
+                return;
+            }
+
+            if (!Validador.validarDouble(txtValor.getText())) {
+                JOptionPane.showMessageDialog(this, "Valor Inválido!");
+                return;
+            }
+
         }
-        
-        if (!Validador.validarDouble(txtValor.getText())) {
-            JOptionPane.showMessageDialog(this, "Valor Inválido!");
-            return;
-        }
-        
-         if(txtNomeProduto != null && txtMarca != null && txtFornecedor != null && txtQtd != null && txtValor!= null){
-            JOptionPane.showConfirmDialog(this, "Deseja salvar?", "Cadastro", WIDTH);
-        }
-         
+
     }//GEN-LAST:event_txtSalvarActionPerformed
 
     private void txtNomeProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeProdutoActionPerformed

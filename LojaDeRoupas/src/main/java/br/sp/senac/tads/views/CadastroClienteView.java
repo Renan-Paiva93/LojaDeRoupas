@@ -1,11 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.sp.senac.tads.views;
 
 import br.sp.senac.tads.DAO.ClienteDAO;
+import br.sp.senac.tads.controller.ClienteController;
 import br.sp.senac.tads.model.Cliente;
 import java.awt.Component;
 import java.util.Locale;
@@ -22,20 +18,8 @@ public class CadastroClienteView extends javax.swing.JFrame {
      */
     public CadastroClienteView() {
         initComponents();
-        
-        this.setLocationRelativeTo(null);
-    }
-    
-    
-    
-    @Override
-    public void setLocationRelativeTo(Component cmpnt) {
-        super.setLocationRelativeTo(cmpnt); //To change body of generated methods, choose Tools | Templates.
-    }
 
-    @Override
-    public void setLocale(Locale locale) {
-        super.setLocale(locale); //To change body of generated methods, choose Tools | Templates.
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -297,7 +281,7 @@ public class CadastroClienteView extends javax.swing.JFrame {
 
     private void menuSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuSairActionPerformed
         //System.exit(0);
-        
+
     }//GEN-LAST:event_menuSairActionPerformed
 
     private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
@@ -306,90 +290,95 @@ public class CadastroClienteView extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNomeActionPerformed
 
     private void txtCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCpfActionPerformed
-        
+
         //if( jFormattedTextFieldCpf.getText().length()!=14){
         //    System.out.println("erro");
-       // }else {
-         //   String cpf = jFormattedTextFieldCpf.getText();
-         //   System.out.println(cpf);
+        // }else {
+        //   String cpf = jFormattedTextFieldCpf.getText();
+        //   System.out.println(cpf);
         //}
-        
-        try{
+        try {
             int cpf = Integer.parseInt(txtCpf.getText());
-        } catch(Exception e){
+        } catch (Exception e) {
             System.out.println("deu erro");
         }
     }//GEN-LAST:event_txtCpfActionPerformed
 
     private void btnSalvarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarClienteActionPerformed
-        
-        //System.out.println(txtCpf.getText().trim().length());
-        
-        Cliente c = new Cliente();
-        ClienteDAO dao = new ClienteDAO();
-        c.setNome(txtNome.getText());
-        c.setEmail(txtEmail.getText());
-        c.setGenero(txtGenero.getText());
-        c.setNascimento(txtDataNasc.getText());
-        c.setCpf(txtCpf.getText());
-        c.setEstadoCivil(txtEstadoCivil.getText());
-        c.setCelular(txtCel.getText());
-        c.setFixo(txtFixo.getText());
-        c.setEndereco(txtEndereco.getText());
-        
-        dao.create(c);
-        
-        
-        if(txtNome.getText().trim().equals("")){
-                JOptionPane.showMessageDialog(this, "O campo nome é obrigatorio");
-                return;
-            }
-        
-        if(txtEmail.getText().trim().equals("")){
-                JOptionPane.showMessageDialog(this, "O campo e-mail é obrigatorio");
-                return;
-            }
-        
 
-        if(txtGenero.getText().trim().equals("")){
+        String nome = txtNome.getText();
+        String email = txtEmail.getText();
+        String genero = txtGenero.getText();
+        String nascimento = txtDataNasc.getText();
+        String cpf = txtCpf.getText();
+        String estadoCivil = txtEstadoCivil.getText();
+        String celular = txtCel.getText();
+        String telefone = txtFixo.getText();
+        String endereco = txtEndereco.getText();
+
+        //Se os dados estiveram preenchidos
+        boolean retorno = ClienteController.salvar(nome, email, genero, nascimento, cpf, estadoCivil, celular, telefone, endereco);
+
+       
+
+        if (txtNome.getText().trim().equals("")) {
+            JOptionPane.showMessageDialog(this, "O campo nome é obrigatorio");
+            return;
+        }
+
+        if (txtEmail.getText().trim().equals("")) {
+            JOptionPane.showMessageDialog(this, "O campo e-mail é obrigatorio");
+            return;
+        }
+
+        if (txtGenero.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(this, "O campo sexo está vazio!");
             return;
         }
-        
-         if(txtDataNasc.getText().trim().length()< 8){
+
+        if (txtDataNasc.getText().trim().length() < 8) {
             //System.out.println("CPF Vazio");
             JOptionPane.showMessageDialog(this, "O campo Nascimento está vazio");
             return;
         }
-        
-        if(txtCpf.getText().trim().length()< 14){
+
+        if (txtCpf.getText().trim().length() < 14) {
             //System.out.println("CPF Vazio");
             JOptionPane.showMessageDialog(this, "O campo CPF está vazio");
             return;
         }
-        
-        if(txtCel.getText().trim().length() < 12){
+
+        if (txtCel.getText().trim().length() < 12) {
             //System.out.println("CPF Vazio");
             JOptionPane.showMessageDialog(this, "O campo Cel está vazio");
             return;
         }
-        
-        if(txtEstadoCivil.getText().trim().equals("")){
+
+        if (txtEstadoCivil.getText().trim().equals("")) {
             JOptionPane.showMessageDialog(this, "O campo Estado Civel é obrigatório");
             return;
         }
-        
-        
-        if(txtEndereco.getText().trim().equals("")){
-                JOptionPane.showMessageDialog(this, "O campo Endereço é obrigatorio");
-                return;
-            }
-        
-        
-        if(txtNome != null && txtCpf != null && txtCel != null && txtEmail != null && txtDataNasc != null && txtEndereco != null && txtEstadoCivil != null && txtGenero != null){
+
+        if (txtEndereco.getText().trim().equals("")) {
+            JOptionPane.showMessageDialog(this, "O campo Endereço é obrigatorio");
+            return;
+        }
+
+        if (txtNome != null && txtCpf != null && txtCel != null && txtEmail != null && txtDataNasc != null && txtEndereco != null && txtEstadoCivil != null && txtGenero != null) {
             JOptionPane.showConfirmDialog(this, "Deseja salvar?", "Cadastro", WIDTH);
         }
         
+        
+         if (retorno == true) {
+            JOptionPane.showMessageDialog(this, "Cliente cadastrado com sucesso!");
+
+            limparCampos();
+
+        } else {
+            JOptionPane.showConfirmDialog(this, "Falha na gravação!");
+        }
+        
+
     }//GEN-LAST:event_btnSalvarClienteActionPerformed
 
     private void txtFixoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFixoActionPerformed
@@ -399,6 +388,18 @@ public class CadastroClienteView extends javax.swing.JFrame {
     private void txtGeneroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtGeneroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtGeneroActionPerformed
+
+    private void limparCampos() {
+        txtEmail.setText("");
+        txtCel.setText("");
+        txtFixo.setText("");
+        txtEndereco.setText("");
+        txtGenero.setText("");
+        txtNome.setText("");
+        txtEstadoCivil.setText("");
+        txtDataNasc.setText("");
+        txtCpf.setText("");
+    }
 
     /**
      * @param args the command line arguments
@@ -436,6 +437,7 @@ public class CadastroClienteView extends javax.swing.JFrame {
                 new CadastroClienteView().setVisible(true);
             }
         });
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

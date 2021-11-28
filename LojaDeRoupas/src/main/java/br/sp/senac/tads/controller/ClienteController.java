@@ -15,8 +15,10 @@ import java.util.ArrayList;
  */
 public class ClienteController {
     
+    ClienteDAO cliente = new ClienteDAO();
+    
     public static boolean salvar(String pNome, String pEmail, String pGenero, String pNascimento,
-                                 String pCpf, String pEstCivil, String pCel, String pFixo, String pEndereco){
+                                 String pCpf, String pEstadoCivil, String pCel, String pFixo, String pEndereco){
         
         Cliente c = new Cliente();
         c.setNome(pNome);
@@ -24,7 +26,7 @@ public class ClienteController {
         c.setGenero(pGenero);
         c.setNascimento(pNascimento);
         c.setCpf(pCpf);
-        c.setEstadoCivil(pEstCivil);
+        c.setEstadoCivil(pEstadoCivil);
         c.setCelular(pCel);
         c.setFixo(pFixo);
         c.setEndereco(pEndereco);
@@ -36,32 +38,45 @@ public class ClienteController {
         return ClienteDAO.excluir(ID);     
     }
     
+    public ArrayList pesquisarNomeController(Cliente clienteBean) {
+        ArrayList<Cliente> listaCliente = new ArrayList<Cliente>();
+        listaCliente = cliente.pesquisarClienteNome(clienteBean);
+        return listaCliente;
+    }
+    
+    /**
+     * Método responsável por pesquisar um Cliente por CPF.
+     * 
+     * @param clienteBean Recebe um Objeto do Tipo Cliente.
+     * @return retorna uma lista contendo o Objeto Cliente pesquisado.
+     */
+    public ArrayList pesquisarCpfController(Cliente clienteBean) {
+        ArrayList<Cliente> listaCliente = new ArrayList<Cliente>();
+        listaCliente = cliente.pesquisarClienteCpf(clienteBean);
+        return listaCliente;
+    }
+    
+    
+    
     public static ArrayList<String[]> consultar(){
 
 
     ArrayList<Cliente> listaRetorno = ClienteDAO.consultar();
-    ArrayList<String[]> retornoView = new ArrayList<>();
-
+    ArrayList<String[]> retornoView = new ArrayList<>();   
      
-    for (Cliente produto : listaRetorno) {
+    for (Cliente cliente : listaRetorno) {
 
             retornoView.add(new String[] {
                 
-                String.valueOf(produto.getId()),
-                String.valueOf(produto.getNome()),
-                String.valueOf(produto.getEmail()),
+                String.valueOf(cliente.getId()),
+                String.valueOf(cliente.getNome()),
+                String.valueOf(cliente.getEmail()),
+                String.valueOf(cliente.getCelular()),
 
               }
           );
     } 
     return retornoView;     
   }
-    
-}    
-
-    
-    
-    
    
-    
-
+}    
