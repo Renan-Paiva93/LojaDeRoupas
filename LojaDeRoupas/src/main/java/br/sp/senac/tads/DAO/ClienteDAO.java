@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package br.sp.senac.tads.DAO;
 
 import br.sp.senac.tads.model.Cliente;
@@ -19,16 +15,25 @@ import javax.swing.JOptionPane;
 /**
  *
  * @author renan.paiva
+ * 
+ * @see br.sp.senac.tads.controller.ClienteController
+ * 
+ * 
  */
 public class ClienteDAO {
     
-    //public static String url="jdbc:mysql://localhost:3307/basenotafiscal?useTimezone=true&serverTimezone=UTC&useSSL=false";
     public static String url = "jdbc:mysql://localhost:3307/lojaderoupas";
     public static String login = "root";
     public static String senha = "";
     public static String DRIVER = "com.mysql.cj.jdbc.Driver";
     
+    /**
+     * @param obj Objeto tipo cliente
+     * @return boolean - true: salvar informação, false: falha ou não grava a informação
+     *
+    */
     public static boolean salvar(Cliente obj){
+
         
         boolean retorno = false;
         Connection conexao = null;
@@ -73,13 +78,19 @@ public class ClienteDAO {
         
         return retorno;
     }
-
+    
+    /**
+     * Método para listar clientes no banco da dados
+     * 
+     * @return retorna lista com clientes localizados
+     * 
+    */
     public static ArrayList<Cliente> consultar() {
 
         ArrayList<Cliente> listaRetorno = new ArrayList<>();
         Connection conexao = null;
         PreparedStatement instrucaoSQL = null;
-        ResultSet rs = null; // retorna obj que consulta no banco
+        ResultSet rs = null; 
 
         try {
             //ETAPA 1 - Carregadr o driver
@@ -140,7 +151,12 @@ public class ClienteDAO {
         return listaRetorno;
 
     }
-
+    
+    /**
+     * @param ID tipo inteiro
+     * @return boolean - true: remover o cliente na base de dados de acordo com ID, false: falha
+     *
+    */
     public static boolean excluir(int ID) {
 
         boolean retorno = false;
@@ -183,6 +199,12 @@ public class ClienteDAO {
 
     }
     
+    /**
+     * Método que pesquisa o cliente na Base de Dados através do CPF
+     * 
+     * @param clienteBean Recebe como parâmetro um Objeto do Tipo Cliente
+     * @return retorna uma lista com o Objeto Cliente pesquisado.
+     */
     public ArrayList<Cliente> pesquisarClienteNome(Cliente clienteBean) {
         
         ResultSet rs = null;
@@ -193,15 +215,15 @@ public class ClienteDAO {
         try {
             Class.forName(DRIVER);
             conexao = DriverManager.getConnection(url, login, senha);
-            instrucaoSQL = conexao.prepareStatement("select ID_CLIENTE, NOME_CLIENTE, CPF, SEXO from CLIENTE where NOME_CLIENTE like ?");
+            instrucaoSQL = conexao.prepareStatement("select idCliente, nome, cpf, genero from CLIENTE where nome like ?");
             instrucaoSQL.setString(1, clienteBean.getNome() + "%");
             rs = instrucaoSQL.executeQuery();
             while (rs.next()) {
                 Cliente cli = new Cliente();
-                cli.setId(rs.getInt("ID_CLIENTE"));
-                cli.setNome(rs.getString("NOME_CLIENTE"));
-                cli.getCpf(rs.getString("CPF"));
-                cli.setGenero(rs.getString("SEXO"));
+                cli.setId(rs.getInt("idCliente"));
+                cli.setNome(rs.getString("nome"));
+                cli.getCpf(rs.getString("cpf"));
+                cli.setGenero(rs.getString("sexo"));
                 listaCliente.add(cli);
             }
             return listaCliente;
@@ -228,6 +250,13 @@ public class ClienteDAO {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    public void casdastroCLiente(Cliente clienteBean) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void alterarCLiente(Cliente clienteBean) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
    }
 

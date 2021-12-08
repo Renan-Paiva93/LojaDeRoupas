@@ -60,7 +60,6 @@ public class ClienteController {
     
     public static ArrayList<String[]> consultar(){
 
-
     ArrayList<Cliente> listaRetorno = ClienteDAO.consultar();
     ArrayList<String[]> retornoView = new ArrayList<>();   
      
@@ -70,13 +69,12 @@ public class ClienteController {
                 
                 String.valueOf(cliente.getId()),
                 String.valueOf(cliente.getNome()),
-                String.valueOf(cliente.getEmail()),
+                String.valueOf(cliente.getCpf()),
                 String.valueOf(cliente.getCelular()),
 
               }
           );
     } 
     return retornoView;     
-  }
-   
+  }  
 }    

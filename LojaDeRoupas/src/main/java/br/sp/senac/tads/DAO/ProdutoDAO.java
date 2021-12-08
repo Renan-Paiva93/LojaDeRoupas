@@ -93,8 +93,8 @@ public class ProdutoDAO {
                 Produto obj = new Produto();
                 obj.setId(rs.getInt("idProduto"));
                 obj.setNome(rs.getNString("nome"));
-                obj.setMarca(rs.getNString("marca"));
-                //obj.setQuantidade(rs.getInt("qtd"));
+                obj.setFornecedor(rs.getNString("fornecedor"));
+                obj.setValor(rs.getDouble("valor"));
 
                 listaRetorno.add(obj);
 

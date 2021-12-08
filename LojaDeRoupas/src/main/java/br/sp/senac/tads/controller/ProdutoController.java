@@ -35,10 +35,8 @@ public class ProdutoController {
     
     public static ArrayList<String[]> consultar(){
 
-
     ArrayList<Produto> listaRetorno = ProdutoDAO.consultar();
     ArrayList<String[]> retornoView = new ArrayList<>();
-
      
     for (Produto produto : listaRetorno) {
 
@@ -46,14 +44,12 @@ public class ProdutoController {
                 
                 String.valueOf(produto.getId()),
                 String.valueOf(produto.getNome()),
-                String.valueOf(produto.getMarca()),
+                String.valueOf(produto.getFornecedor()),
+                String.valueOf(produto.getValor()),
 
               }
           );
     } 
     return retornoView;     
-  }
-    
-    
-    
+  } 
 }

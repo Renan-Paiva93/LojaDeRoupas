@@ -2,7 +2,14 @@
 package br.sp.senac.tads.model;
 /**
  *
- * @author Dell
+ * @author Renan Paiva
+ * @see br.sp.senac.tads.controller.ClienteController
+ * @see br.sp.senac.tads.DAO.ClienteDAO
+ * 
+ */
+
+/**
+ * Servirá para acessar e modificar
  */
 public class Cliente {
     
@@ -17,7 +24,7 @@ public class Cliente {
             fixo,
             estadoCivil,
             endereco;
-
+    
     public Cliente() {
         clientesCadastrados++;
         //this.id = clientesCadastrados;

@@ -131,7 +131,7 @@ public class CadastroClienteView extends javax.swing.JFrame {
             }
         });
 
-        jLabel8.setText("Sexo: *");
+        jLabel8.setText("Sexo: F / M *");
 
         jLabel7.setText("Telefone fixo :");
 

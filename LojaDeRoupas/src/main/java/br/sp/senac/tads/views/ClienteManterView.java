@@ -3,7 +3,6 @@ package br.sp.senac.tads.views;
 
 import br.sp.senac.tads.DAO.ClienteDAO;
 import br.sp.senac.tads.controller.ClienteController;
-import br.sp.senac.tads.controller.ProdutoController;
 import br.sp.senac.tads.model.Cliente;
 import java.awt.HeadlessException;
 import java.util.ArrayList;
@@ -103,7 +102,7 @@ public class ClienteManterView extends javax.swing.JFrame {
             }
         });
 
-        btnInserir.setText("Inserir");
+        btnInserir.setText("Novo");
         btnInserir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnInserirActionPerformed(evt);

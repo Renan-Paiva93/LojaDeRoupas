@@ -202,9 +202,9 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jButton7" linkSize="4" min="-2" pref="102" max="-2" attributes="0"/>
+                      <Component id="btnVisulizar" linkSize="4" min="-2" pref="102" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                      <Component id="jButton8" linkSize="4" min="-2" pref="65" max="-2" attributes="0"/>
+                      <Component id="txtNovo" linkSize="4" min="-2" pref="65" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                       <Component id="btnExcluir" linkSize="4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
@@ -216,10 +216,10 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jButton7" linkSize="5" min="-2" pref="38" max="-2" attributes="0"/>
+                          <Component id="btnVisulizar" linkSize="5" min="-2" pref="38" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="btnExcluir" linkSize="5" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="jButton8" linkSize="5" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="txtNovo" linkSize="5" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -236,18 +236,21 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExcluirActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton7">
+            <Component class="javax.swing.JButton" name="btnVisulizar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Visualizar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton7ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVisulizarActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton8">
+            <Component class="javax.swing.JButton" name="txtNovo">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Novo"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNovoActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

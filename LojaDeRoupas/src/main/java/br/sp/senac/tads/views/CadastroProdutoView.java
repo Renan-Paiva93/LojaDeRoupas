@@ -204,22 +204,8 @@ public class CadastroProdutoView extends javax.swing.JFrame {
         String desc = txtDesc.getText();
 
         boolean retorno = ProdutoController.salvar(nome, marca, fornecedor, Qtd, valor, desc);
-
-        if (retorno == true) {
-            JOptionPane.showMessageDialog(this, "Produto gravado com sucesso!");
-        } else {
-            JOptionPane.showConfirmDialog(this, "Falha na gravação!");
-        }
-
-        //Produto p = new Produto();
-        //ProdutoDAO dao = new ProdutoDAO();
-        //p.setNome(txtNomeProduto.getText());
-        //p.setMarca(txtMarca.getText());
-        //p.setFornecedor(txtFornecedor.getText());
-        //p.setQuantidade(Integer.parseInt(txtQtd.getText()));
-        //p.setValor(Double.parseDouble(txtValor.getText()));
-        //p.setDescricao(txtDesc.getText());
-        //dao.create(p);
+       
+       
         if (txtNomeProduto != null && txtMarca != null && txtFornecedor != null && txtQtd != null && txtValor != null) {
             JOptionPane.showConfirmDialog(this, "Deseja salvar?", "Cadastro", WIDTH);
 
@@ -264,13 +250,34 @@ public class CadastroProdutoView extends javax.swing.JFrame {
             }
 
         }
-
+        
+        if (retorno == true) {
+            JOptionPane.showMessageDialog(this, "Produto gravado com sucesso!");
+            
+            limparCampos();
+            
+        } else {
+            JOptionPane.showConfirmDialog(this, "Falha na gravação!");
+        }
+        
+        
     }//GEN-LAST:event_txtSalvarActionPerformed
 
     private void txtNomeProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeProdutoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNomeProdutoActionPerformed
-
+    
+    private void limparCampos() {
+        txtNomeProduto.setText("");
+        txtMarca.setText("");
+        txtFornecedor.setText("");
+        txtQtd.setText("");
+        txtValor.setText("");
+        txtDesc.setText("");
+    }
+    
+    
+    
     /**
      * @param args the command line arguments
      */

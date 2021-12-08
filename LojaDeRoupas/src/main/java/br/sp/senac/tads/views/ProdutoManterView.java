@@ -1,7 +1,10 @@
 
 package br.sp.senac.tads.views;
 
+import br.sp.senac.tads.DAO.ProdutoDAO;
 import br.sp.senac.tads.controller.ProdutoController;
+import br.sp.senac.tads.model.Produto;
+import java.awt.HeadlessException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -42,8 +45,8 @@ public class ProdutoManterView extends javax.swing.JFrame {
         jFormattedTextField1 = new javax.swing.JFormattedTextField();
         jPanel3 = new javax.swing.JPanel();
         btnExcluir = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        btnVisulizar = new javax.swing.JButton();
+        txtNovo = new javax.swing.JButton();
 
         jLabel3.setText("jLabel3");
 
@@ -94,14 +97,19 @@ public class ProdutoManterView extends javax.swing.JFrame {
             }
         });
 
-        jButton7.setText("Visualizar");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        btnVisulizar.setText("Visualizar");
+        btnVisulizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                btnVisulizarActionPerformed(evt);
             }
         });
 
-        jButton8.setText("Novo");
+        txtNovo.setText("Novo");
+        txtNovo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNovoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -109,29 +117,29 @@ public class ProdutoManterView extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnVisulizar, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
-                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
                 .addComponent(btnExcluir)
                 .addGap(85, 85, 85))
         );
 
-        jPanel3Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnExcluir, jButton7, jButton8});
+        jPanel3Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnExcluir, btnVisulizar, txtNovo});
 
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnVisulizar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel3Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnExcluir, jButton7, jButton8});
+        jPanel3Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnExcluir, btnVisulizar, txtNovo});
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -201,25 +209,13 @@ public class ProdutoManterView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void btnVisulizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisulizarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_btnVisulizarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        
-        recarregarTabela();
-        
-        
-       //ArrayList<String[]> lstRetorno = ProdutoController.consultar();
-       
-       
-       
-       //DefaultTableModel modelo = (DefaultTableModel) jTProdutos.getModel();
-       
-       // for (String[] item : lstRetorno) {
-        //    modelo.addRow(item);
-       // }
-        
+
+        recarregarTabela(); 
         
     }//GEN-LAST:event_btnBuscarActionPerformed
 
@@ -231,19 +227,24 @@ public class ProdutoManterView extends javax.swing.JFrame {
             int ID = Integer.parseInt(String.valueOf(jTProdutos.getValueAt(indiceLinha, 0)));
 
             if (ProdutoController.excluir(ID)) {
-                JOptionPane.showMessageDialog(this, "Exclusão realizada com sucesso!");
-
-                recarregarTabela();
+                JOptionPane.showMessageDialog(this, "Exclusão realizada com sucesso!");    
 
             } else {
                 JOptionPane.showMessageDialog(this, "Exclusão realizada com sucesso!");
-                //JOptionPane.showMessageDialog(this, "Falha na exclusão!");
+                
+                recarregarTabela();
+                
             }
         } else {
             JOptionPane.showMessageDialog(this, "Selecione uma linha da tabela!");
         }
         
     }//GEN-LAST:event_btnExcluirActionPerformed
+
+    private void txtNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNovoActionPerformed
+        CadastroProdutoView telaProduto = new CadastroProdutoView();
+        telaProduto.setVisible(true);
+    }//GEN-LAST:event_txtNovoActionPerformed
 
     public void recarregarTabela() {
 
@@ -315,8 +316,7 @@ public class ProdutoManterView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnExcluir;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
+    private javax.swing.JButton btnVisulizar;
     private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -327,5 +327,6 @@ public class ProdutoManterView extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTProdutos;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton txtNovo;
     // End of variables declaration//GEN-END:variables
 }
